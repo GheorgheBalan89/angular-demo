@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-primary" (click)="onToggleDisplay($event)">Display details</button>
+    </div>
+    <div *ngIf="isVisible" class="col-xs-12 toggled-content">
+        <p>This is my awesome hidden content!</p>
+    </div>
+
+    <div *ngIf="count > 0">
+        <p>Click events</p>
+            <p *ngFor="let event of aClicks; let i = index" 
+            [ngStyle]="{'background-color' : i >= 5 ? 'blue' : '', 'color': i >= 5 ? 'white' : ''}"> 
+            {{event.timestamp}} - click no: {{event.clickNo}}</p>
+    </div>  
+</div>
